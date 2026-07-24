@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radioactive Labs, product studio</title>
+<meta name="description" content="Radioactive Labs is a product studio running on a proven Rails platform: accounts, permissions, multi-tenancy, durable workflows, webhooks, WhatsApp and USSD. We build the part unique to your business, so it ships in weeks.">
+<meta property="og:title" content="Radioactive Labs, product studio">
+<meta property="og:description" content="A proven Rails platform under every build, so we only write the part unique to your business. Weeks, not months.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://radioactive-labs.github.io/">
+<meta property="og:image" content="https://radioactive-labs.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f7f3ea">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Radioactive Labs",
+  "description": "Product studio building business software on a proven Rails platform.",
+  "url": "https://radioactive-labs.github.io/",
+  "founder": { "@type": "Person", "name": "Stefan Froelich", "url": "https://thedumbtechguy.com" },
+  "sameAs": ["https://github.com/radioactive-labs"]
+}
+</script>
+<style>
+  :root{
+    --paper:#f7f3ea;
+    --paper-2:#f1ece0;
+    --ink:#1a1712;
+    --body:#5f594e;
+    --faint:#8b8477;
+    --line:#e3ddce;
+    --accent:#c6f135;      /* radioactive lime */
+    --accent-deep:#4a5e00;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+  .mono{font-family:"JetBrains Mono",monospace}
+  a{color:inherit}
+
+  nav{border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:16px;letter-spacing:-.01em}
+  .mark{width:15px;height:15px;border-radius:50%;background:var(--accent);
+    box-shadow:0 0 0 4px rgba(198,241,53,.28);display:inline-block}
+  .nav-links{display:flex;gap:30px;font-size:14.5px;color:var(--body)}
+  .nav-links a{text-decoration:none}
+  .nav-links a:hover{color:var(--ink)}
+
+  .hero{padding:96px 0 72px}
+  h1{font-family:"Fraunces",serif;font-weight:500;font-size:60px;line-height:1.04;
+    letter-spacing:-.02em;max-width:16ch}
+  h1 .hl{background:linear-gradient(transparent 62%,var(--accent) 62%);padding:0 2px}
+  .lede{margin-top:30px;max-width:56ch;font-size:19px;color:var(--body)}
+  .cta-row{margin-top:38px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--ink);color:var(--paper);
+    text-decoration:none;font-weight:500;font-size:15.5px;padding:14px 26px;border-radius:2px}
+  .btn:hover{background:#000}
+  .btn-note{font-size:14.5px;color:var(--faint)}
+
+  section.blk{padding:64px 0;border-top:1px solid var(--line)}
+  h2{font-family:"Fraunces",serif;font-weight:500;font-size:34px;letter-spacing:-.015em;line-height:1.1}
+  .blk p.intro{margin-top:16px;max-width:60ch;color:var(--body)}
+
+  .how p{max-width:64ch;color:var(--body);font-size:18px}
+
+  .build-grid{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:36px 56px}
+  .build-item h3{font-family:"Fraunces",serif;font-weight:500;font-size:22px;letter-spacing:-.01em}
+  .build-item p{margin-top:9px;color:var(--body);font-size:16px}
+
+  .prod-grid{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .prod{border:1px solid var(--line);background:var(--paper-2);border-radius:4px;padding:28px}
+  .prod .tag{font-size:12.5px;color:var(--accent-deep);font-weight:500;letter-spacing:.04em}
+  .prod h3{font-family:"Fraunces",serif;font-weight:600;font-size:24px;margin-top:6px}
+  .prod p{margin-top:10px;color:var(--body);font-size:15.5px}
+  .prod .lnk{margin-top:16px;display:inline-block;font-size:14.5px;font-weight:500;
+    text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:1px}
+  .prod .lnk:hover{border-bottom-width:3px}
+  .prod.ghost{background:transparent;border-style:dashed;display:flex;align-items:center}
+  .prod.ghost p{margin:0;color:var(--faint)}
+
+  .stack-list{margin-top:30px;display:grid;gap:2px}
+  .stack-row{display:grid;grid-template-columns:190px 1fr;gap:24px;
+    padding:15px 0;border-top:1px solid var(--line);align-items:baseline}
+  .stack-row:first-child{border-top:none}
+  .stack-row .name{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:500}
+  .stack-row .name a{text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:1px}
+  .stack-row .desc{color:var(--body);font-size:15.5px}
+  .stack-row .desc a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px}
+  .stack-row .desc a:hover{text-decoration-color:var(--ink)}
+
+  .who p{max-width:60ch;font-size:19px;color:var(--body)}
+  .who a{color:var(--ink);border-bottom:2px solid var(--accent);text-decoration:none}
+
+  .contact{padding:80px 0}
+  .contact h2{font-size:42px}
+  .contact p{margin-top:16px;max-width:52ch;color:var(--body);font-size:18px}
+
+  footer{border-top:1px solid var(--line);padding:34px 0 60px}
+  .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
+    font-size:14.5px;color:var(--body)}
+  .foot-in a{text-decoration:none}
+  .foot-in a:hover{color:var(--ink)}
+
+  @media(max-width:720px){
+    .wrap{padding:0 22px}
+    h1{font-size:40px}
+    .lede{font-size:17px}
+    .build-grid,.prod-grid{grid-template-columns:1fr}
+    .stack-row{grid-template-columns:1fr;gap:4px}
+    .nav-links{display:none}
+    .contact h2{font-size:32px}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-in">
+  <div class="brand"><span class="mark"></span>Radioactive Labs</div>
+  <div class="nav-links">
+    <a href="#build">What we build</a>
+    <a href="#products">Products</a>
+    <a href="#stack">The stack</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1>Most of your app <span class="hl">already exists</span>. We build the part that doesn't.</h1>
+  <p class="lede">Radioactive Labs runs a proven Rails platform: accounts and permissions, multi-tenancy, durable background work, integrations that retry instead of failing quietly, and messaging over WhatsApp and USSD. Your build starts most of the way done, so it ships in weeks. The speed is the platform, not cut corners.</p>
+  <div class="cta-row">
+    <!-- PLACEHOLDER: update contact email -->
+    <a class="btn" href="mailto:hello@radioactivelabs.dev">Email us</a>
+    <span class="btn-note">hello@radioactivelabs.dev</span>
+  </div>
+</div></header>
+
+<section class="blk how"><div class="wrap">
+  <h2>Why it takes weeks, not months</h2>
+  <p class="intro">Every business application needs the same foundation: accounts and permissions, multi-tenancy, background jobs that survive a crash, integrations that retry, and a way to reach customers where they are. We already run all of it in production. When you hire us, that groundwork is finished, and we spend our time on the logic specific to your business, the part no framework ships with.</p>
+</div></section>
+
+<section class="blk" id="build"><div class="wrap">
+  <h2>What we build</h2>
+  <div class="build-grid">
+    <div class="build-item">
+      <h3>Internal tools and CRMs</h3>
+      <p>The systems a business runs on. Pipelines, back-office workflows, reporting, approvals. Software your team operates from every day, not a demo.</p>
+    </div>
+    <div class="build-item">
+      <h3>WhatsApp and USSD products</h3>
+      <p>Order flows, balance checks, agent data collection, surveys. USSD reaches feature phones and works with no data, which matters when your customers are traders, field agents, or rural.</p>
+    </div>
+    <div class="build-item">
+      <h3>Integrations that don't break</h3>
+      <p>Payment reconciliation, multi-step onboarding, scheduled follow-ups, retries against flaky third-party APIs. Long-running processes with real delivery logs, not hand-rolled cron.</p>
+    </div>
+    <div class="build-item">
+      <h3>The unique 20 percent</h3>
+      <p>Whatever your business actually does that no one else does. That is where we spend our time, because everything underneath it is already built.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="blk" id="products"><div class="wrap">
+  <h2>Products we run</h2>
+  <p class="intro">We build our own products on the same platform. When one fits your problem, you get it live on day one instead of paying us to rebuild it.</p>
+  <div class="prod-grid">
+    <div class="prod">
+      <div class="tag mono">FLAGSHIP</div>
+      <h3>UniversalChatbot</h3>
+      <p>Multi-channel support and messaging: a shared inbox, AI-drafted replies, and a knowledge base your bot answers from. One place for WhatsApp, web, and more.</p>
+      <a class="lnk" href="https://universalchatbot.com">universalchatbot.com</a>
+    </div>
+    <!-- PLACEHOLDER: add further products (name, one line, url) -->
+    <div class="prod ghost">
+      <p>[ Your next product. Placeholder, to add. ]</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="blk" id="stack"><div class="wrap">
+  <h2>The stack we build on</h2>
+  <p class="intro">This is the platform. It is open source, and we maintain it in the open. It is also why a build that would normally take six months takes a few weeks.</p>
+  <div class="stack-list">
+    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/plutonium-core">Plutonium</a></div><div class="desc">Convention-driven Rails framework for full business applications, with authorization and UI built in. <a href="https://radioactive-labs.github.io/plutonium-core/">Docs</a></div></div>
+    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/flow_chat">FlowChat</a></div><div class="desc">Conversational interfaces for WhatsApp, Telegram, and USSD, with interactive flows.</div></div>
+    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/chrono_forge">ChronoForge</a></div><div class="desc">Durable, distributed workflows for Rails that survive restarts and retry safely.</div></div>
+    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/angarium">Angarium</a></div><div class="desc">Outbound webhooks with signing, retries, and SSRF protection.</div></div>
+    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/active_shrine">ActiveShrine</a></div><div class="desc">ActiveStorage-compatible attachments backed by Shrine.</div></div>
+    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs">Phlexi</a></div><div class="desc">Component suite for building Rails UIs in Ruby.</div></div>
+  </div>
+</div></section>
+
+<section class="blk who"><div class="wrap">
+  <h2>Who we are</h2>
+  <p>Radioactive Labs is the studio of <a href="https://thedumbtechguy.com">Stefan Froelich</a>, who built a Ghanaian fintech from zero to 580,000 users and helped scale a mental health platform to 25 million covered lives. Small team, senior hands, no handoff to juniors.</p>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <h2>Start a build</h2>
+  <p>Tell us what you are trying to build. If the platform fits, we will move fast. If it does not, we will tell you that too.</p>
+  <div class="cta-row">
+    <!-- PLACEHOLDER: update contact email -->
+    <a class="btn" href="mailto:hello@radioactivelabs.dev">hello@radioactivelabs.dev</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap foot-in">
+  <div>Radioactive Labs · Accra, Ghana · working worldwide</div>
+  <div><a href="https://github.com/radioactive-labs">github.com/radioactive-labs</a></div>
+</div></footer>
+
+</body>
+</html>
