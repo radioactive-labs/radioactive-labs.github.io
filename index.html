@@ -13,11 +13,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f7f3ea">
+<meta name="theme-color" content="#f6f3ec">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,95 +28,96 @@
 </script>
 <style>
   :root{
-    --paper:#f7f3ea;
-    --paper-2:#f1ece0;
-    --ink:#1a1712;
-    --body:#5f594e;
-    --faint:#8b8477;
-    --line:#e3ddce;
-    --accent:#c6f135;      /* radioactive lime */
-    --accent-deep:#4a5e00;
+    --paper:#f6f3ec;
+    --paper-2:#efeade;
+    --ink:#161412;
+    --body:#57524a;
+    --faint:#8a847a;
+    --line:#e2dccf;
+    --accent:#c9f23c;      /* radioactive lime */
+    --accent-ink:#141210;
+    --accent-deep:#5a7000;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth}
   body{
     background:var(--paper);
     color:var(--ink);
-    font-family:"Inter",system-ui,sans-serif;
+    font-family:"Helvetica Neue",Arial,system-ui,sans-serif;
     font-size:17px;
-    line-height:1.6;
+    line-height:1.55;
   }
-  .wrap{max-width:1080px;margin:0 auto;padding:0 32px}
-  .mono{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 40px}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
   a{color:inherit}
 
   nav{border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:16px;letter-spacing:-.01em}
-  .mark{width:15px;height:15px;border-radius:50%;background:var(--accent);
-    box-shadow:0 0 0 4px rgba(198,241,53,.28);display:inline-block}
-  .nav-links{display:flex;gap:30px;font-size:14.5px;color:var(--body)}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;
+    letter-spacing:-.01em;text-transform:uppercase}
+  .mark{width:13px;height:13px;border-radius:50%;background:var(--accent);display:inline-block}
+  .nav-links{display:flex;gap:28px;font-size:14px;color:var(--body);font-weight:500}
   .nav-links a{text-decoration:none}
   .nav-links a:hover{color:var(--ink)}
 
-  .hero{padding:96px 0 72px}
-  h1{font-family:"Fraunces",serif;font-weight:500;font-size:60px;line-height:1.04;
-    letter-spacing:-.02em;max-width:16ch}
-  h1 .hl{background:linear-gradient(transparent 62%,var(--accent) 62%);padding:0 2px}
-  .lede{margin-top:30px;max-width:56ch;font-size:19px;color:var(--body)}
-  .cta-row{margin-top:38px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-  .btn{display:inline-block;background:var(--ink);color:var(--paper);
-    text-decoration:none;font-weight:500;font-size:15.5px;padding:14px 26px;border-radius:2px}
-  .btn:hover{background:#000}
-  .btn-note{font-size:14.5px;color:var(--faint)}
+  .hero{padding:110px 0 84px}
+  h1{font-weight:700;font-size:66px;line-height:0.98;letter-spacing:-.035em;max-width:15ch}
+  .lede{margin-top:34px;max-width:52ch;font-size:19px;color:var(--body)}
+  .cta-row{margin-top:40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);
+    text-decoration:none;font-weight:700;font-size:15px;padding:15px 28px;letter-spacing:-.01em}
+  .btn:hover{background:#d4fa54}
+  .btn-note{font-size:14px;color:var(--faint)}
 
-  section.blk{padding:64px 0;border-top:1px solid var(--line)}
-  h2{font-family:"Fraunces",serif;font-weight:500;font-size:34px;letter-spacing:-.015em;line-height:1.1}
-  .blk p.intro{margin-top:16px;max-width:60ch;color:var(--body)}
+  section.blk{padding:70px 0;border-top:1px solid var(--line)}
+  h2{font-weight:700;font-size:34px;letter-spacing:-.025em;line-height:1.05}
+  .blk p.intro{margin-top:18px;max-width:60ch;color:var(--body);font-size:18px}
 
   .how p{max-width:64ch;color:var(--body);font-size:18px}
 
-  .build-grid{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:36px 56px}
-  .build-item h3{font-family:"Fraunces",serif;font-weight:500;font-size:22px;letter-spacing:-.01em}
-  .build-item p{margin-top:9px;color:var(--body);font-size:16px}
+  .build-grid{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px 60px}
+  .build-item h3{font-weight:700;font-size:20px;letter-spacing:-.02em}
+  .build-item p{margin-top:10px;color:var(--body);font-size:16px}
 
-  .prod-grid{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .prod{border:1px solid var(--line);background:var(--paper-2);border-radius:4px;padding:28px}
-  .prod .tag{font-size:12.5px;color:var(--accent-deep);font-weight:500;letter-spacing:.04em}
-  .prod h3{font-family:"Fraunces",serif;font-weight:600;font-size:24px;margin-top:6px}
-  .prod p{margin-top:10px;color:var(--body);font-size:15.5px}
-  .prod .lnk{margin-top:16px;display:inline-block;font-size:14.5px;font-weight:500;
-    text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:1px}
-  .prod .lnk:hover{border-bottom-width:3px}
+  .prod-grid{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .prod{border:1px solid var(--line);background:var(--paper-2);padding:30px}
+  .prod .tag{font-size:11px;color:var(--accent-deep);font-weight:700;letter-spacing:.12em}
+  .prod h3{font-weight:700;font-size:23px;letter-spacing:-.02em;margin-top:8px}
+  .prod p{margin-top:11px;color:var(--body);font-size:15.5px}
+  .prod .lnk{margin-top:18px;display:inline-block;font-size:14.5px;font-weight:600;
+    text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+  .prod .lnk:hover{text-decoration-color:var(--ink)}
   .prod.ghost{background:transparent;border-style:dashed;display:flex;align-items:center}
   .prod.ghost p{margin:0;color:var(--faint)}
 
-  .stack-list{margin-top:30px;display:grid;gap:2px}
-  .stack-row{display:grid;grid-template-columns:190px 1fr;gap:24px;
-    padding:15px 0;border-top:1px solid var(--line);align-items:baseline}
+  .stack-list{margin-top:34px;display:grid}
+  .stack-row{display:grid;grid-template-columns:180px 1fr;gap:24px;
+    padding:16px 0;border-top:1px solid var(--line);align-items:baseline}
   .stack-row:first-child{border-top:none}
-  .stack-row .name{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:500}
-  .stack-row .name a{text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:1px}
+  .stack-row .name{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:14.5px;font-weight:600}
+  .stack-row .name a{text-decoration:none}
+  .stack-row .name a:hover{color:var(--accent-deep)}
   .stack-row .desc{color:var(--body);font-size:15.5px}
-  .stack-row .desc a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px}
+  .stack-row .desc a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
   .stack-row .desc a:hover{text-decoration-color:var(--ink)}
 
   .who p{max-width:60ch;font-size:19px;color:var(--body)}
-  .who a{color:var(--ink);border-bottom:2px solid var(--accent);text-decoration:none}
+  .who a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--faint);text-underline-offset:3px}
+  .who a:hover{text-decoration-color:var(--ink)}
 
-  .contact{padding:80px 0}
-  .contact h2{font-size:42px}
-  .contact p{margin-top:16px;max-width:52ch;color:var(--body);font-size:18px}
+  .contact{padding:88px 0}
+  .contact h2{font-size:42px;letter-spacing:-.03em}
+  .contact p{margin-top:18px;max-width:52ch;color:var(--body);font-size:18px}
 
   footer{border-top:1px solid var(--line);padding:34px 0 60px}
   .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
-    font-size:14.5px;color:var(--body)}
+    font-size:14px;color:var(--body)}
   .foot-in a{text-decoration:none}
   .foot-in a:hover{color:var(--ink)}
 
   @media(max-width:720px){
-    .wrap{padding:0 22px}
-    h1{font-size:40px}
+    .wrap{padding:0 24px}
+    h1{font-size:42px;letter-spacing:-.03em}
     .lede{font-size:17px}
     .build-grid,.prod-grid{grid-template-columns:1fr}
     .stack-row{grid-template-columns:1fr;gap:4px}
@@ -141,8 +139,8 @@
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <h1>Most of your app <span class="hl">already exists</span>. We build the part that doesn't.</h1>
-  <p class="lede">Radioactive Labs runs a proven Rails platform: accounts and permissions, multi-tenancy, durable background work, integrations that retry instead of failing quietly, and messaging over WhatsApp and USSD. Your build starts most of the way done, so it ships in weeks. The speed is the platform, not cut corners.</p>
+  <h1>Most of your app already exists. We build the part that doesn't.</h1>
+  <p class="lede">We have already built and run the parts every business app needs: sign-in and permissions, multi-tenancy, workflows that can't drop, WhatsApp and USSD. Your project starts on top of that instead of an empty repo, so it ships in weeks. Fast because the groundwork is done, not because we skip it.</p>
   <div class="cta-row">
     <!-- PLACEHOLDER: update contact email -->
     <a class="btn" href="mailto:hello@radioactivelabs.dev">Email us</a>
@@ -199,9 +197,9 @@
   <p class="intro">This is the platform. It is open source, and we maintain it in the open. It is also why a build that would normally take six months takes a few weeks.</p>
   <div class="stack-list">
     <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/plutonium-core">Plutonium</a></div><div class="desc">Convention-driven Rails framework for full business applications, with authorization and UI built in. <a href="https://radioactive-labs.github.io/plutonium-core/">Docs</a></div></div>
-    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/flow_chat">FlowChat</a></div><div class="desc">Conversational interfaces for WhatsApp, Telegram, and USSD, with interactive flows.</div></div>
-    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/chrono_forge">ChronoForge</a></div><div class="desc">Durable, distributed workflows for Rails that survive restarts and retry safely.</div></div>
-    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/angarium">Angarium</a></div><div class="desc">Outbound webhooks with signing, retries, and SSRF protection.</div></div>
+    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/flow_chat">FlowChat</a></div><div class="desc">Conversational interfaces for WhatsApp, Telegram, and USSD, with interactive flows. <a href="https://radioactive-labs.github.io/flow_chat/">Docs</a></div></div>
+    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/chrono_forge">ChronoForge</a></div><div class="desc">Durable, distributed workflows for Rails that survive restarts and retry safely. <a href="https://radioactive-labs.github.io/chrono_forge/">Docs</a></div></div>
+    <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/angarium">Angarium</a></div><div class="desc">Outbound webhooks with signing, retries, and SSRF protection. <a href="https://radioactive-labs.github.io/angarium/">Docs</a></div></div>
     <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs/active_shrine">ActiveShrine</a></div><div class="desc">ActiveStorage-compatible attachments backed by Shrine.</div></div>
     <div class="stack-row"><div class="name"><a href="https://github.com/radioactive-labs">Phlexi</a></div><div class="desc">Component suite for building Rails UIs in Ruby.</div></div>
   </div>
