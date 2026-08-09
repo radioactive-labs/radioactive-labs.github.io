@@ -8,12 +8,15 @@
 <meta property="og:title" content="Radioactive Labs, product studio">
 <meta property="og:description" content="A proven Rails platform under every build, so we only write the part unique to your business. Weeks, not months.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Radioactive Labs">
+<meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://radioactive-labs.github.io/">
 <meta property="og:image" content="https://radioactive-labs.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f6f3ec">
+<link rel="canonical" href="https://radioactive-labs.github.io/">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <script type="application/ld+json">
 {
@@ -22,8 +25,13 @@
   "name": "Radioactive Labs",
   "description": "Product studio building business software on a proven Rails platform.",
   "url": "https://radioactive-labs.github.io/",
-  "founder": { "@type": "Person", "name": "Stefan Froelich", "url": "https://thedumbtechguy.com" },
-  "sameAs": ["https://github.com/radioactive-labs"]
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Fayaworks Technologies Ltd",
+    "url": "https://fayaworks.com/"
+  },
+  "email": "hello@fayaworks.com",
+  "sameAs": ["https://github.com/radioactive-labs", "https://fayaworks.com/"]
 }
 </script>
 <style>
@@ -68,6 +76,13 @@
     text-decoration:none;font-weight:700;font-size:15px;padding:15px 28px;letter-spacing:-.01em}
   .btn:hover{background:#d4fa54}
   .btn-note{font-size:14px;color:var(--faint)}
+  /* A mailto: link is a dead end without a mail client, so the address can be
+     copied instead. Hidden until the script enables it. */
+  .copy{font-family:inherit;font-size:14px;font-weight:600;color:var(--body);
+    background:none;border:1px solid var(--line);padding:14px 18px;cursor:pointer;
+    transition:border-color .15s ease,color .15s ease}
+  .copy:hover{border-color:var(--accent-deep);color:var(--ink)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent-deep);outline-offset:3px}
 
   section.blk{padding:70px 0;border-top:1px solid var(--line)}
   h2{font-weight:700;font-size:34px;letter-spacing:-.025em;line-height:1.05}
@@ -142,9 +157,9 @@
   <h1>Most of your app already exists. We build the part that doesn't.</h1>
   <p class="lede">We have already built and run the parts every business app needs: sign-in and permissions, multi-tenancy, dashboards, workflows that can't drop, WhatsApp and USSD. Your project starts on top of that instead of an empty repo, so it ships in weeks. Fast because the groundwork is done, not because we skip it.</p>
   <div class="cta-row">
-    <!-- PLACEHOLDER: update contact email -->
-    <a class="btn" href="mailto:hello@radioactivelabs.dev">Email us</a>
-    <span class="btn-note">hello@radioactivelabs.dev</span>
+    <a class="btn" href="mailto:hello@fayaworks.com">Email us</a>
+    <button type="button" class="copy" data-copy="hello@fayaworks.com" hidden>Copy address</button>
+    <span class="btn-note">hello@fayaworks.com</span>
   </div>
 </div></header>
 
@@ -207,22 +222,52 @@
 
 <section class="blk who"><div class="wrap">
   <h2>Who we are</h2>
-  <p>Radioactive Labs is the studio of <a href="https://thedumbtechguy.com">Stefan Froelich</a>, who built a Ghanaian fintech from zero to 580,000 users and helped scale a mental health platform to 25 million covered lives. Small team, senior hands, no handoff to juniors.</p>
+  <p>A small team of senior engineers in Accra. We have taken a Ghanaian fintech from zero to 580,000 users and helped scale a mental health platform to 25 million covered lives. No handoff to juniors.</p>
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap">
   <h2>Start a build</h2>
   <p>Tell us what you are trying to build. If the platform fits, we will move fast. If it does not, we will tell you that too.</p>
   <div class="cta-row">
-    <!-- PLACEHOLDER: update contact email -->
-    <a class="btn" href="mailto:hello@radioactivelabs.dev">hello@radioactivelabs.dev</a>
+    <a class="btn" href="mailto:hello@fayaworks.com">hello@fayaworks.com</a>
+    <button type="button" class="copy" data-copy="hello@fayaworks.com" hidden>Copy address</button>
   </div>
 </div></section>
 
 <footer><div class="wrap foot-in">
-  <div>Radioactive Labs · Accra, Ghana · working worldwide</div>
+  <div>Radioactive Labs is operated by <a href="https://fayaworks.com/">Fayaworks Technologies Ltd</a>, Accra, Ghana.</div>
   <div><a href="https://github.com/radioactive-labs">github.com/radioactive-labs</a></div>
 </div></footer>
+
+<script>
+document.querySelectorAll("[data-copy]").forEach(function (btn) {
+  btn.hidden = false;
+  btn.addEventListener("click", function () {
+    var text = btn.getAttribute("data-copy");
+    var label = btn.textContent;
+    function done() {
+      btn.textContent = "Copied";
+      setTimeout(function () { btn.textContent = label; }, 1600);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+});
+</script>
 
 </body>
 </html>

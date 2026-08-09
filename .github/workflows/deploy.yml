@@ -22,9 +22,28 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
+      # The guardrail is a deploy gate. If a commit ever introduces a
+      # registration document or a forbidden string, this fails and nothing
+      # is published.
+      - name: Verify published facts and check for leaks
+        run: bash scripts/check.sh
+
+      # Uploading path "." publishes everything in the repo, which is how
+      # README.md and .gitignore ended up on the live site. Stage only the
+      # files that are actually the website.
+      - name: Stage the site
+        run: |
+          mkdir -p _site
+          cp index.html 404.html robots.txt sitemap.xml .nojekyll _site/
+          cp -R assets _site/assets
+          echo "--- publishing ---"
+          find _site -type f | sort
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: _site
+
       - id: deployment
         uses: actions/deploy-pages@v4
